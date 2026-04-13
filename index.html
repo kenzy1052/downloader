@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KENZY | Pro Download Center</title>
+    <title>KENZY | Download Center</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;700;900&display=swap"
@@ -13,9 +13,9 @@
     <style>
       :root {
         --bg: #0b0b0c;
-        --card: rgba(255, 255, 255, 0.04);
+        --card: rgba(255, 255, 255, 0.05);
         --border: rgba(255, 255, 255, 0.08);
-        --text: #ffffff;
+        --text: #fff;
         --sub: #888;
         --accent: #ff2a2a;
       }
@@ -26,7 +26,6 @@
         --border: rgba(0, 0, 0, 0.08);
         --text: #111;
         --sub: #666;
-        --accent: #d10000;
       }
 
       * {
@@ -39,10 +38,9 @@
         font-family: "Inter", sans-serif;
         background: var(--bg);
         color: var(--text);
-        transition: 0.4s ease;
       }
 
-      /* Ambient gradient */
+      /* glow */
       body::before {
         content: "";
         position: fixed;
@@ -58,190 +56,79 @@
         z-index: -1;
       }
 
-      /* Header */
+      /* toggle */
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        cursor: pointer;
+      }
+
+      /* header */
       header {
         text-align: center;
-        padding: 80px 20px 40px;
+        padding: 100px 20px 40px;
       }
 
       h1 {
         font-family: "Syncopate", sans-serif;
         font-size: clamp(2.5rem, 8vw, 4.5rem);
-        letter-spacing: -2px;
       }
 
-      /* Toggle */
-      .theme-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        padding: 10px 15px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        backdrop-filter: blur(10px);
-      }
-
-      /* Nav */
-      nav {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 50px;
-      }
-
-      .tab-trigger {
-        padding: 14px 35px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: var(--card);
-        backdrop-filter: blur(12px);
-        color: var(--sub);
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.3s;
-      }
-
-      .tab-trigger:hover {
-        transform: translateY(-3px);
-      }
-
-      .tab-trigger.active {
-        background: var(--text);
-        color: var(--bg);
-      }
-
-      /* Container */
+      /* container */
       .container {
-        max-width: 1100px;
+        max-width: 900px;
         margin: auto;
         padding: 20px;
       }
 
-      /* Card */
-      .premium-card {
+      /* premium card */
+      .file-card {
         background: var(--card);
         border: 1px solid var(--border);
         backdrop-filter: blur(20px);
-        padding: 50px;
         border-radius: 25px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      }
-
-      /* Fields */
-      .field {
-        margin-bottom: 25px;
-      }
-
-      label {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        color: var(--accent);
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: 18px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: transparent;
-        color: var(--text);
-        margin-top: 10px;
+        padding: 60px;
+        text-align: center;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
         transition: 0.3s;
       }
 
-      input:focus,
-      textarea:focus {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
-        outline: none;
-      }
-
-      /* Button */
-      .btn-action {
-        width: 100%;
-        padding: 18px;
-        border: none;
-        border-radius: 12px;
-        background: linear-gradient(90deg, #ff0000, #ff4d4d);
-        color: #fff;
-        font-weight: 700;
-        letter-spacing: 2px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-
-      .btn-action:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
-      }
-
-      /* Grid */
-      .download-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-      }
-
-      /* File card */
-      .file-box {
-        background: var(--card);
-        border: 1px solid var(--border);
-        backdrop-filter: blur(20px);
-        padding: 30px;
-        border-radius: 20px;
-        transition: 0.3s;
-      }
-
-      .file-box:hover {
+      .file-card:hover {
         transform: translateY(-8px);
       }
 
-      .file-box h3 {
+      /* title */
+      .file-card h2 {
+        font-size: 2rem;
         margin-bottom: 10px;
       }
 
-      .file-box p {
+      .file-card p {
         color: var(--sub);
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
 
-      /* Button */
-      .dl-button {
-        text-align: center;
-        display: block;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid var(--border);
+      /* button */
+      .download-btn {
+        display: inline-block;
+        padding: 18px 40px;
+        border-radius: 12px;
         text-decoration: none;
-        color: var(--text);
+        font-weight: 700;
+        letter-spacing: 2px;
+        background: linear-gradient(90deg, #ff0000, #ff4d4d);
+        color: #fff;
+        transition: 0.3s;
       }
 
-      .dl-button:hover {
-        background: var(--text);
-        color: var(--bg);
-      }
-
-      /* Tabs */
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-        animation: fade 0.4s ease;
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-        }
+      .download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
       }
     </style>
   </head>
@@ -252,52 +139,22 @@
     <header>
       <h1>KENZY</h1>
       <p style="letter-spacing: 4px; color: var(--sub); font-weight: 700">
-        GEN II SYSTEM
+        DOWNLOAD PORTAL
       </p>
     </header>
 
-    <nav>
-      <button class="tab-trigger active" onclick="switchTab('create', this)">
-        Create
-      </button>
-      <button class="tab-trigger" onclick="switchTab('download', this)">
-        Vault
-      </button>
-    </nav>
-
     <div class="container">
-      <div id="create" class="tab-content active">
-        <div class="premium-card">
-          <div class="field">
-            <label>Internal Reference Name</label>
-            <input id="fileName" />
-          </div>
+      <div class="file-card">
+        <h2>Curriculum Vitae</h2>
+        <p>Professional CV document ready for download.</p>
 
-          <div class="field">
-            <label>File Source</label>
-            <input id="fileSource" />
-          </div>
-
-          <div class="field">
-            <label>Notes</label>
-            <textarea id="fileDesc"></textarea>
-          </div>
-
-          <button class="btn-action" onclick="pushToVault()">
-            Initialize Save
-          </button>
-        </div>
-      </div>
-
-      <div id="download" class="tab-content">
-        <div id="vault-grid" class="download-grid"></div>
+        <a href="assets/cariculum vitae.pdf" download class="download-btn">
+          DOWNLOAD FILE
+        </a>
       </div>
     </div>
 
     <script>
-      let vault = JSON.parse(localStorage.getItem("kenzy_vault")) || [];
-
-      /* Theme */
       function toggleTheme() {
         document.body.classList.toggle("light");
         localStorage.setItem(
@@ -309,59 +166,6 @@
       if (localStorage.getItem("theme") === "true") {
         document.body.classList.add("light");
       }
-
-      /* Tabs */
-      function switchTab(id, el) {
-        document
-          .querySelectorAll(".tab-content")
-          .forEach((t) => t.classList.remove("active"));
-        document
-          .querySelectorAll(".tab-trigger")
-          .forEach((b) => b.classList.remove("active"));
-        document.getElementById(id).classList.add("active");
-        el.classList.add("active");
-        if (id === "download") renderVault();
-      }
-
-      /* Save */
-      function pushToVault() {
-        const name = fileName.value;
-        const src = fileSource.value;
-        const desc = fileDesc.value;
-
-        if (!name || !src) return alert("Missing required fields");
-
-        vault.push({ id: Date.now(), name, src, desc });
-        localStorage.setItem("kenzy_vault", JSON.stringify(vault));
-
-        fileName.value = "";
-        fileSource.value = "";
-        fileDesc.value = "";
-
-        switchTab("download", document.querySelectorAll(".tab-trigger")[1]);
-      }
-
-      /* Render */
-      function renderVault() {
-        const grid = document.getElementById("vault-grid");
-        grid.innerHTML = "";
-
-        if (vault.length === 0) {
-          grid.innerHTML = `<div style="text-align:center; opacity:.5;">Vault Empty</div>`;
-          return;
-        }
-
-        vault.forEach((item) => {
-          grid.innerHTML += `
-        <div class="file-box">
-            <h3>${item.name}</h3>
-            <p>${item.desc || "No notes provided"}</p>
-            <a href="${item.src}" class="dl-button" download>Download</a>
-        </div>`;
-        });
-      }
-
-      renderVault();
     </script>
   </body>
 </html>
