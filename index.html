@@ -38,6 +38,7 @@
         font-family: "Inter", sans-serif;
         background: var(--bg);
         color: var(--text);
+        transition: background 0.3s ease;
       }
 
       /* glow */
@@ -66,6 +67,8 @@
         background: var(--card);
         border: 1px solid var(--border);
         cursor: pointer;
+        color: var(--text);
+        z-index: 10;
       }
 
       /* header */
@@ -83,7 +86,10 @@
       .container {
         max-width: 900px;
         margin: auto;
-        padding: 20px;
+        padding: 20px 20px 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px; /* Spacing between cards */
       }
 
       /* premium card */
@@ -100,6 +106,7 @@
 
       .file-card:hover {
         transform: translateY(-8px);
+        border-color: var(--accent);
       }
 
       /* title */
@@ -144,6 +151,7 @@
     </header>
 
     <div class="container">
+      <!-- Main CV Card -->
       <div class="file-card">
         <h2>Curriculum Vitae</h2>
         <p>Professional CV document ready for download.</p>
@@ -152,19 +160,31 @@
           DOWNLOAD FILE
         </a>
       </div>
+
+      <!-- Breathly CV Card -->
+      <div class="file-card">
+        <h2>Breathly's CV</h2>
+        <p>Official document for Breathly available for download.</p>
+
+        <a href="assets/Breathly's CV.pdf" download class="download-btn">
+          DOWNLOAD FILE
+        </a>
+      </div>
     </div>
 
     <script>
       function toggleTheme() {
         document.body.classList.toggle("light");
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("light"),
-        );
+        const isLight = document.body.classList.contains("light");
+        localStorage.setItem("theme", isLight);
+        document.querySelector(".theme-toggle").textContent = isLight
+          ? "☀️"
+          : "🌙";
       }
 
       if (localStorage.getItem("theme") === "true") {
         document.body.classList.add("light");
+        document.querySelector(".theme-toggle").textContent = "☀️";
       }
     </script>
   </body>

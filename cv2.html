@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breathly Abaya - Professional CV</title>
+    <style>
+      :root {
+        --primary-color: #1a2a3a;
+        --accent-color: #2980b9;
+        --text-color: #333;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.4;
+        color: var(--text-color);
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        font-size: 11pt;
+      }
+
+      /* Strict A4 sizing for single page */
+      .cv-page {
+        width: 210mm;
+        height: 297mm;
+        padding: 15mm 18mm;
+        margin: 10px auto;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        text-align: center;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24pt;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .phone-header {
+        font-size: 12pt;
+        font-weight: bold;
+        color: var(--accent-color);
+        margin-top: 4px;
+      }
+
+      section {
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 12pt;
+        color: white;
+        background: var(--primary-color);
+        padding: 5px 12px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+      }
+
+      .summary-text {
+        text-align: justify;
+        margin: 0;
+      }
+
+      .experience-item {
+        margin-bottom: 10px;
+      }
+
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .sub-header {
+        font-style: italic;
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      ul {
+        margin: 2px 0 0 18px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 2px;
+      }
+
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .details-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .details-list li {
+        margin-bottom: 4px;
+      }
+
+      .details-list strong {
+        display: inline-block;
+        width: 105px;
+        color: var(--primary-color);
+      }
+
+      .ref-box {
+        border-left: 3px solid var(--accent-color);
+        padding-left: 12px;
+      }
+
+      /* Print CSS */
+      @media print {
+        body {
+          background: none;
+        }
+        .cv-page {
+          margin: 0;
+          box-shadow: none;
+          width: 100%;
+          height: 100%;
+        }
+        @page {
+          size: A4;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-page">
+      <header>
+        <h1>Breathly Abaya</h1>
+        <div class="phone-header">Phone: 054-982-1553</div>
+      </header>
+
+      <section>
+        <h2>Professional Summary</h2>
+        <p class="summary-text">
+          Versatile professional with a strong background in education,
+          communication, and creative arts. Expert at building stakeholder
+          relationships and managing classroom dynamics with high work ethics
+          and technical craftsmanship.
+        </p>
+      </section>
+
+      <section>
+        <h2>Work Experience</h2>
+
+        <div class="experience-item">
+          <div class="item-header">
+            <span>School Teacher</span>
+            <span>2022 – 2025</span>
+          </div>
+          <div class="sub-header">Crystal Crown School</div>
+          <ul>
+            <li>
+              Designed study plans and facilitated parent-teacher communications
+              to ensure academic excellence.
+            </li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="item-header">
+            <span>Childcare Specialist</span>
+            <span>2025 – 2026</span>
+          </div>
+          <div class="sub-header">NAT 1 Kiddies Care</div>
+          <ul>
+            <li>
+              Provided professional developmental care and ensured a safe,
+              high-satisfaction environment.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="experience-item">
+          <div class="item-header">
+            <span>Swedru School of Business</span>
+            <span>2018 – 2021</span>
+          </div>
+          <div class="sub-header">
+            West African Senior School Certificate (WASSCE)
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-layout">
+        <section>
+          <h2>Skills & Strengths</h2>
+          <ul style="list-style: none; margin-left: 0">
+            <li>
+              <strong>• Communication:</strong> Exceptional interaction skills.
+            </li>
+            <li>
+              <strong>• Interpersonal:</strong> Skilled at building strong
+              rapport.
+            </li>
+            <li>
+              <strong>• Technical:</strong> Hands-on sewing and beading skills.
+            </li>
+            <li>
+              <strong>• Customer Care:</strong> Patient and solution-focused.
+            </li>
+            <li>
+              <strong>• Ethics:</strong> Highly disciplined and accountable.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Personal Details</h2>
+          <ul class="details-list">
+            <li><strong>Nationality:</strong> Ghanaian</li>
+            <li><strong>Marital Status:</strong> Single</li>
+            <li><strong>Date of Birth:</strong> 30th April, 2026</li>
+            <li><strong>Languages:</strong> English, Fante, Twi</li>
+            <li><strong>Hobbies:</strong> Singing, Writing, Drawing</li>
+          </ul>
+        </section>
+      </div>
+
+      <section style="margin-top: auto">
+        <h2>Reference</h2>
+        <div class="ref-box">
+          <strong>Miss Abena Janet</strong><br />
+          Headmistress, Crystal Crown School<br />
+          Phone: 0249595391
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
